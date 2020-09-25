@@ -1,10 +1,22 @@
 import React from "react";
 
-const Node = () => {
+type Props = {
+  key: number;
+  col: number;
+  row: number;
+  isStart: boolean;
+  isFinish: boolean;
+  isVisited: boolean;
+  isWall: boolean;
+};
+
+const Node: React.FC<Props> = (
+  { key, col, row, isFinish, isStart, isWall },
+) => {
   return (
-    <div>
+    <td key={key}>
       Node
-    </div>
+    </td>
   );
 };
 

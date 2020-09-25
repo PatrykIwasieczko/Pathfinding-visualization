@@ -10,9 +10,28 @@ const PathfindingVisualizer = () => {
     setGrid(getInitialGrid());
   }, []);
   return (
-    <div>
-      <Node />
-    </div>
+    <table className="board">
+      <tbody className="table-body">
+        {grid.map((gridRow, rowIndex) => (
+          <tr className="board-row" key={rowIndex}>
+            {gridRow.map((node, nodeIndex) => {
+              const { row, col, isFinish, isStart, isWall, isVisited } = node;
+              return (
+                <Node
+                  key={nodeIndex}
+                  row={row}
+                  col={col}
+                  isFinish={isFinish}
+                  isVisited={isVisited}
+                  isStart={isStart}
+                  isWall={isWall}
+                />
+              );
+            })}
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };
 
