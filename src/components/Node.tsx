@@ -8,14 +8,38 @@ type Props = {
   isFinish: boolean;
   isVisited: boolean;
   isWall: boolean;
+  handleMouseDown: (row: number, col: number) => void;
+  handleMouseEnter: (row: number, col: number) => void;
+  handleMouseUp: () => void;
 };
 
 const Node: React.FC<Props> = (
-  { key, col, row, isFinish, isStart, isWall },
+  {
+    col,
+    row,
+    isFinish,
+    isStart,
+    isWall,
+    handleMouseDown,
+    handleMouseEnter,
+    handleMouseUp,
+  },
 ) => {
+  const extraClassName = isFinish
+    ? "node-finish"
+    : isStart
+    ? "node-start"
+    : isWall
+    ? "node-wall"
+    : "";
   return (
-    <td key={key}>
-      Node
+    <td
+      id={`node-${row}-${col}`}
+      className={`node ${extraClassName}`}
+      onMouseDown={() => handleMouseDown(row, col)}
+      onMouseEnter={() => handleMouseEnter(row, col)}
+      onMouseUp={() => handleMouseUp()}
+    >
     </td>
   );
 };

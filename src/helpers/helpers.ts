@@ -4,6 +4,7 @@ import {
   FINISH_NODE_COL,
   FINISH_NODE_ROW,
 } from "./constants";
+import { NodeType } from "./Types";
 
 export const getInitialGrid = () => {
   const grid = [];
@@ -28,4 +29,19 @@ const createNode = (col: number, row: number) => {
     isWall: false,
     previousNode: null,
   };
+};
+
+export const getNewGridWithWallToggled = (
+  grid: NodeType[][],
+  row: number,
+  col: number,
+) => {
+  let newGrid = grid.slice();
+  const node = newGrid[row][col];
+  const newNode = {
+    ...node,
+    isWall: !node.isWall,
+  };
+  newGrid[row][col] = newNode;
+  return newGrid;
 };

@@ -6,3 +6,39 @@
   text-decoration: none;
   font-weight: 600;
 }
+
+.board {
+  display: table;
+  margin: 50px 5px 0 5px;
+}
+
+.table-body {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.row {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit
+}
+
+.node {
+  display: table-cell;
+  width: 25px;
+  height: 25px;
+  outline: 1px solid rgb(175, 216, 248);
+}
+
+.node-finish {
+  background-color: red;
+}
+
+.node-start {
+  background-color: green;
+}
+
+.node-wall {
+  background-color: rgb(12, 53, 71);
+}
