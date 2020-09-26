@@ -6,5 +6,5 @@ export type NodeType = {
   distance: number;
   isVisited: boolean;
   isWall: boolean;
-  previousNode: Node | null;
+  previousNode: NodeType | null;
 };

@@ -42,3 +42,37 @@
 .node-wall {
   background-color: rgb(12, 53, 71);
 }
+
+
+.node-visited {
+  animation-name: visitedAnimation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(251, 82, 82, 0.75);
+    border-radius: 100%;
+  }
+
+  50% {
+    background-color: rgba(253, 193, 8, 0.75);
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: rgba(30, 150, 136, 0.75);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgba(33, 168, 243, 0.75);
+  }
+}
